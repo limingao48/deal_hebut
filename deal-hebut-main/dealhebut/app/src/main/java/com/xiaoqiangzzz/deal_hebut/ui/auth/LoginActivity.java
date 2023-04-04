@@ -38,8 +38,12 @@ public class LoginActivity extends AppCompatActivity {
                 userService.login(new BaseHttpService.CallBack() {
                     @Override
                     public void onSuccess(BaseHttpService.HttpTask.CustomerResponse result) {
-                        // 登陆成功
-                        if (result.getResponse().code() >= 200 && result.getResponse().code() < 300) {
+                        if(result == null) {
+                            // 登陆失败 提示错误
+                            Snackbar.make(button, "网络错误，请检查当前网络状态!", Snackbar.LENGTH_SHORT)
+                                    .show();
+                        }
+                        else if (result.getResponse().code() >= 200 && result.getResponse().code() < 300) {
                             userService.currentUser.onNext((User) result.getData());
                             // 存储token 用户名 密码
                             String token = result.getResponse().header(UserService.TOKEN_HEADER);
