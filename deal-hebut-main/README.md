@@ -8,6 +8,8 @@ mysql 3307端口新建数据库,数据库名deal-hebut 用户名root 密码 （�
 
 设置nginx
 
+配置local.properties,sdk为本地AndroidSdk安装路径
+
 前台修改BaseHttpService.java文件里ip与Const.java文件里ip为后台电脑ip
 
 初始化用户在后台startup文件夹下initData.java的文件下查看和修改
