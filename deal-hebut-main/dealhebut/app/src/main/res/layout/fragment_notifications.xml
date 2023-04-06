@@ -66,10 +66,10 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:id="@+id/my_issued_image"
-                        style="@style/my_deal_image"
-                        android:layout_width="match_parent"
-                        android:src="@drawable/buy_fill" />
+                            android:id="@+id/my_issued_image"
+                            style="@style/my_deal_image"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/buy_fill"/>
 
                     <TextView
                         style="@style/recommendText"
@@ -87,10 +87,10 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:id="@+id/my_sold_image"
-                        style="@style/my_deal_image"
-                        android:layout_width="match_parent"
-                        android:src="@drawable/money" />
+                            android:id="@+id/my_sold_image"
+                            style="@style/my_deal_image"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/money"/>
 
                     <TextView
                         style="@style/recommendText"
@@ -109,10 +109,10 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:id="@+id/my_bought_image"
-                        style="@style/my_deal_image"
-                        android:layout_width="match_parent"
-                        android:src="@drawable/format" />
+                            android:id="@+id/my_bought_image"
+                            style="@style/my_deal_image"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/format"/>
 
                     <TextView
                         style="@style/recommendText"
