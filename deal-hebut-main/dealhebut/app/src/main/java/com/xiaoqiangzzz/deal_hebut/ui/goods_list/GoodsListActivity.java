@@ -2,16 +2,26 @@ package com.xiaoqiangzzz.deal_hebut.ui.goods_list;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 
+import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.xiaoqiangzzz.deal_box.R;
 import com.xiaoqiangzzz.deal_hebut.entity.Goods;
 import com.xiaoqiangzzz.deal_hebut.entity.GoodsType;
+import com.xiaoqiangzzz.deal_hebut.entity.User;
+import com.xiaoqiangzzz.deal_hebut.service.BaseHttpService;
+import com.xiaoqiangzzz.deal_hebut.service.GoodsService;
+import com.xiaoqiangzzz.deal_hebut.service.UserService;
+import com.xiaoqiangzzz.deal_hebut.ui.dashboard.DashboardFragment;
 import com.xiaoqiangzzz.deal_hebut.ui.goods.GoodsActivity;
 import com.xiaoqiangzzz.deal_hebut.ui.home.GoodsListAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.OrientationHelper;
@@ -20,8 +30,11 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 public class GoodsListActivity extends AppCompatActivity {
     private StaggeredGridLayoutManager staggeredGridLayoutManager;
+    private GoodsService goodsService = GoodsService.getInstance();
+    private UserService userService = UserService.getInstance();
 
     private RecyclerView.Adapter goodsListAdapter;
+    private User currentUser;
 
     private ArrayList<Goods> goodsListData = new ArrayList<>();
     @Override
@@ -42,25 +55,52 @@ public class GoodsListActivity extends AppCompatActivity {
         this.staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL);
         goodsListView.setLayoutManager(staggeredGridLayoutManager);
         // 设置adapter
-        goodsListAdapter = new GoodsListAdapter(this.goodsListData);
-        ((GoodsListAdapter) this.goodsListAdapter).setOnItemClickListener(new GoodsListAdapter.OnItemClickListener() {
 
-            /**
-             * 设置点击条目触发方法
-             * @param view view
-             * @param position position
-             */
+        userService.getCurrentUser(new BaseHttpService.CallBack() {
             @Override
-            public void onItemClick(View view, int position) {
-//                Toast.makeText(DashboardFragment.this.getContext(),"这是条目"
-//                        +DashboardFragment.this.chatListData.get(position),Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(GoodsListActivity.this, GoodsActivity.class);
-                intent.putExtra("id", GoodsListActivity.this.goodsListData.get(position).getId());
-                startActivity(intent);
+            public void onSuccess(BaseHttpService.HttpTask.CustomerResponse result) {
+                User user = (User) result.getData();
+
+                currentUser = user;
+
+                goodsService.getByUserId(new BaseHttpService.CallBack() {
+                    @Override
+                    public void onSuccess(BaseHttpService.HttpTask.CustomerResponse result) {
+                        goodsListAdapter = new GoodsListAdapter(goodsListData);
+
+                        goodsListData = new ArrayList<>(Arrays.asList((Goods[]) result.getData()));
+                        ((GoodsListAdapter) goodsListAdapter).updateData(goodsListData);
+                        goodsListView.setAdapter(goodsListAdapter);
+
+                        ((GoodsListAdapter) goodsListAdapter).setOnItemClickListener(new GoodsListAdapter.OnItemClickListener() {
+
+                            /**
+                             * 设置点击条目触发方法
+                             * @param view view
+                             * @param position position
+                             */
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                Handler handler = new Handler(Looper.getMainLooper());
+                                handler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        //放在UI线程弹Toast
+                                        Toast.makeText(GoodsListActivity.this, "编辑功能暂未上线", Toast.LENGTH_LONG).show();
+                                    }
+                                });
+
+                            }
+                        });
+                    }
+                }, currentUser.getId());
             }
         });
-        goodsListView.setAdapter(this.goodsListAdapter);
+
+
     }
+
+
 
     private ArrayList<String> getData() {
         ArrayList<String> data = new ArrayList<>();

@@ -20,7 +20,7 @@
         </activity>
         <activity
                 android:name="com.xiaoqiangzzz.deal_hebut.ui.auth.LoginActivity"
-                android:label="登录" tools:ignore="MissingClass">
+                android:label="易河工" tools:ignore="MissingClass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

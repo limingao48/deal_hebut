@@ -28,6 +28,12 @@ public class GoodsController {
     return this.goodsService.getById(id);
   }
 
+  @GetMapping("getByUserId/{id}")
+  @JsonView(GetByUserJsonView.class)
+  public List<Goods> getByUserId(@PathVariable Long id) {
+    return this.goodsService.getByUserId(id);
+  }
+
   @GetMapping("getAll")
   @JsonView(GetAllJsonView.class)
   public List<Goods> getAll() {
@@ -38,6 +44,9 @@ public class GoodsController {
   }
 
   private interface GetByIdJsonView extends GetAllJsonView {
+  }
+
+  private interface GetByUserJsonView extends GetAllJsonView {
   }
 
 }
