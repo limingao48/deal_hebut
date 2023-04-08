@@ -30,6 +30,14 @@ public class GoodsServiceImpl implements GoodsService {
   }
 
   @Override
+  public List<Goods> getByUserId(Long id) {
+    List<Goods> goods =  this.goodsRepository.findAllByCreateUserId(id);
+
+    return goods;
+
+  }
+
+  @Override
   public List<Goods> getAll() {
     return this.goodsRepository.findAllByOrderByIdDesc();
   }

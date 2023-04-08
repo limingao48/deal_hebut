@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface GoodsRepository extends CrudRepository<Goods, Long>, JpaSpecificationExecutor<Goods> {
   List<Goods> findAllByOrderByIdDesc();
+  List<Goods> findAllByCreateUserId(Long id);
 }

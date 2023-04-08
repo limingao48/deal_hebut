@@ -9,5 +9,7 @@ public interface GoodsService {
 
   Goods getById(Long id);
 
+  List<Goods> getByUserId(Long id);
+
   List<Goods> getAll();
 }

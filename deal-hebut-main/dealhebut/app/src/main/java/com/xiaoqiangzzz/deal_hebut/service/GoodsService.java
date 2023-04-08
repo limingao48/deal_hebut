@@ -33,4 +33,8 @@ public class GoodsService {
     public void getById(BaseHttpService.CallBack callBack, Long id) {
         httpService.get(LOCAL_URL + "goods/getById/" + id.toString(), callBack, Goods.class);
     }
+
+    public void getByUserId(BaseHttpService.CallBack callBack, Long userid) {
+        httpService.get(LOCAL_URL + "goods/getByUserId/" + userid.toString(), callBack, Goods[].class);
+    }
 }

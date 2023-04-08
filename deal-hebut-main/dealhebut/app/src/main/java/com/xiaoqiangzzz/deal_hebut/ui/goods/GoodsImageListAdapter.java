@@ -13,9 +13,11 @@ import com.xiaoqiangzzz.deal_hebut.service.DownloadImageTask;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
+import com.xiaoqiangzzz.deal_hebut.service.UserService;
 
 public class GoodsImageListAdapter extends RecyclerView.Adapter<GoodsImageListAdapter.ViewHolder>{
     private List<Attachment> mData;
+    private UserService userService = UserService.getInstance();
 
     public GoodsImageListAdapter(List<Attachment> data) {
         this.mData = data;

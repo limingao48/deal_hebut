@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import com.xiaoqiangzzz.deal_hebut.ui.auth.LoginActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -80,33 +81,35 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-        // 我卖出的的按钮绑定事件
-        ImageView mySoldImage = (ImageView) view.findViewById(R.id.my_sold_image);
-        mySoldImage.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                // 给bnt1添加点击响应事件
-                Intent intent = new Intent(getActivity(), GoodsListActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("goodsType", GoodsType.MY_BOLD);
-                intent.putExtras(bundle);
-                //启动
-                startActivity(intent);
-            }
-        });
 
-        // 我买到的按钮绑定事件
-        ImageView myBoughtImage = (ImageView) view.findViewById(R.id.my_bought_image);
-        myBoughtImage.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                // 给bnt1添加点击响应事件
-                Intent intent = new Intent(getActivity(), GoodsListActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("goodsType", GoodsType.MY_BOUGHT);
-                intent.putExtras(bundle);
-                //启动
-                startActivity(intent);
-            }
-        });
+//
+//        // 我卖出的的按钮绑定事件
+//        ImageView mySoldImage = (ImageView) view.findViewById(R.id.my_sold_image);
+//        mySoldImage.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                // 给bnt1添加点击响应事件
+//                Intent intent = new Intent(getActivity(), GoodsListActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("goodsType", GoodsType.MY_BOLD);
+//                intent.putExtras(bundle);
+//                //启动
+//                startActivity(intent);
+//            }
+//        });
+//
+//        // 我买到的按钮绑定事件
+//        ImageView myBoughtImage = (ImageView) view.findViewById(R.id.my_bought_image);
+//        myBoughtImage.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                // 给bnt1添加点击响应事件
+//                Intent intent = new Intent(getActivity(), GoodsListActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("goodsType", GoodsType.MY_BOUGHT);
+//                intent.putExtras(bundle);
+//                //启动
+//                startActivity(intent);
+//            }
+//        });
 
         // 修改头像
         view.findViewById(R.id.visitor_image_container).setOnClickListener(new View.OnClickListener() {
@@ -123,8 +126,23 @@ public class NotificationsFragment extends Fragment {
 
             }
         });
+
+        view.findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                Bundle bundle = new Bundle();
+                intent.putExtras(bundle);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                //启动
+                startActivity(intent);
+
+            }
+        });
         return view;
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
