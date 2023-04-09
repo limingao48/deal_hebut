@@ -6,7 +6,13 @@
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/add.xml" value="0.1" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/buy_fill.xml" value="0.1225" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/fab.xml" value="0.1225" />
-        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/format.xml" value="0.1125" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/ic_chevron_right_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1125" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/chat.xml" value="0.11145833333333334" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/chat_card.xml" value="0.11145833333333334" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/chat_item_left.xml" value="0.11145833333333334" />
@@ -14,9 +20,10 @@
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/fragment_dashboard.xml" value="0.11145833333333334" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
-        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/goods.xml" value="0.2" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/goods.xml" value="0.264" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/goods_card_left.xml" value="0.11145833333333334" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/goods_card_right.xml" value="0.11145833333333334" />
+        <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/goods_image.xml" value="0.1" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/issue_goods.xml" value="0.2" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/issue_goods_image.xml" value="0.11145833333333334" />
         <entry key="..\:/BaiduNetdiskDownload/android/deal_hebut/deal-hebut-main/dealhebut/app/src/main/res/layout/login.xml" value="0.144" />

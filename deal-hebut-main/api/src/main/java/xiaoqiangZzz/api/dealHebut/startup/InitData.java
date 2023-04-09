@@ -18,7 +18,7 @@ public class InitData {
 
   private UserRepository userRepository;
 
-  private String Username = "15713301902";
+  private String Username = "13131693956";
   private String Password = "123456";
 
 
@@ -38,12 +38,12 @@ public class InitData {
     User user1 = new User();
     user1.setUsername(this.Username);
     user1.setPassword(this.Password);
-    user1.setPetName("小强1号");
+    user1.setPetName("用户1号");
     users.add(user1);
     User user2 = new User();
     user2.setUsername("13900000000");
     user2.setPassword(this.Password);
-    user2.setPetName("小强2号");
+    user2.setPetName("用户2号");
     users.add(user2);
     this.userRepository.saveAll(users);
   }

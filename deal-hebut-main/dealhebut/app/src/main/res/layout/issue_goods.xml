@@ -45,7 +45,7 @@
             style="@style/first_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发布物品" />
+            android:text="发布商品" />
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="@color/dark"
-                android:text="物品名称：" />
+                android:text="名称：" />
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/issue_goods_title_layout"
                 android:layout_width="match_parent"
@@ -83,7 +83,7 @@
             android:maxLines="8"
             android:scrollbars="vertical"
             android:textSize="20sp"
-            android:hint="说说你的感受，入手渠道，转手原因..."
+            android:hint="介绍一下要发布的商品"
             >
         </EditText>
 
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:id="@+id/issue_goods_price_input"
-                    />
+                />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
