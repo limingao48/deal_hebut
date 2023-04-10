@@ -21,14 +21,15 @@
         android:theme="@style/AppTheme"
         tools:targetApi="n" >
         <activity
+            android:name="com.xiaoqiangzzz.deal_hebut.ui.auth.PasswordActivity"
+            android:exported="false" />
+        <activity
             android:name="com.xiaoqiangzzz.deal_hebut.ui.changeUsername.ChangeUsersname"
-            android:label="修改用户名"
-             />
+            android:label="修改用户名" />
         <activity
             android:name="com.xiaoqiangzzz.deal_hebut.MainActivity"
             android:label="@string/app_name" >
         </activity>
-
         <activity
             android:name="com.xiaoqiangzzz.deal_hebut.ui.auth.LoginActivity"
             android:label="易河工"

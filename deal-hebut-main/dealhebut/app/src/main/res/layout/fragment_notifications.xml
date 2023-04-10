@@ -187,13 +187,14 @@
                 android:text="密码" />
 
             <LinearLayout
-                android:id="@+id/password"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
 
                 <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/change_password"
                     android:layout_width="24dp"
                     android:layout_height="wrap_content"
                     android:background="@null"

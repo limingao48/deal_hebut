@@ -4,13 +4,14 @@ public class Const {
     public static final String TAG = "xlui";
     public static final String placeholder = "placeholder";
 
+
     /**
      * <code>im</code> in address is the endpoint configured in server.
      * If you are using AVD provided by Android Studio, you should uncomment the upper address.
      * If you are using Genymotion, nothing else to do.
      * If you are using your own phone, just change the server address and port.
      */
-    public static final String address = "ws://192.168.31.169:8002/im/websocket";
+    public static final String address = "ws://192.168.31.249:8002/im/websocket";
 
     public static final String broadcast = "/broadcast";
     public static final String broadcastResponse = "/b";
