@@ -50,8 +50,8 @@ public class IssueGoodsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.issue_goods);
-        Button button1 = (Button) findViewById(R.id.goods_to_chat);
-        Drawable drawable1 = getResources().getDrawable(R.drawable.wang);
+        Button button1 = (Button) findViewById(R.id.submit_goods_button);
+        Drawable drawable1 = getResources().getDrawable(R.drawable.submit);
         drawable1.setBounds(10, 5, 80, 80);//第一0是距左边距离，第二0是距上边距离
         button1.setCompoundDrawables(drawable1, null, null, null);//只放左边
         this.issueGoodsImageView = findViewById(R.id.issue_goods_image);
