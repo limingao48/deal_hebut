@@ -87,6 +87,17 @@ public class BaseHttpService {
         new HttpTask<T>(callback, type).execute(request);
     }
 
+    public <T> void delete(String url, Object data, BaseHttpService.CallBack callback, Class<T> type) {
+        Gson gson = new Gson();
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), gson.toJson(data));
+        Request request = new Request.Builder()
+                .url(BASE_URL + url)
+                .delete(body)
+                .addHeader("Authorization", token)
+                .build();
+        new HttpTask<T>(callback, type).execute(request);
+    }
+
     public <T> void putByForm(String url, RequestBody body, BaseHttpService.CallBack callback, Class<T> type) {
         Request request = new Request.Builder()
                 .url(BASE_URL + url)

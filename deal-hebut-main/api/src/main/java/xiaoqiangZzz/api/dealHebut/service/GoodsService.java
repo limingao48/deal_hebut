@@ -11,5 +11,7 @@ public interface GoodsService {
 
   List<Goods> getByUserId(Long id);
 
+  void delete(Long id);
+
   List<Goods> getAll();
 }

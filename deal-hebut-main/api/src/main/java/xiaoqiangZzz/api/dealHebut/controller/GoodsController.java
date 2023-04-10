@@ -40,6 +40,11 @@ public class GoodsController {
     return this.goodsService.getAll();
   }
 
+  @DeleteMapping("delete")
+  public void deleteGoods(@RequestBody Long id){
+    this.goodsService.delete(id);
+  }
+
   private interface GetAllJsonView extends Goods.BuyUserJsonView, Goods.CreateUserJsonView {
   }
 

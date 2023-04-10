@@ -1,5 +1,8 @@
 package com.xiaoqiangzzz.deal_hebut.ui.goods_list;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,12 +13,14 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.xiaoqiangzzz.deal_box.R;
+import com.xiaoqiangzzz.deal_hebut.MainActivity;
 import com.xiaoqiangzzz.deal_hebut.entity.Goods;
 import com.xiaoqiangzzz.deal_hebut.entity.GoodsType;
 import com.xiaoqiangzzz.deal_hebut.entity.User;
 import com.xiaoqiangzzz.deal_hebut.service.BaseHttpService;
 import com.xiaoqiangzzz.deal_hebut.service.GoodsService;
 import com.xiaoqiangzzz.deal_hebut.service.UserService;
+import com.xiaoqiangzzz.deal_hebut.ui.changeUsername.ChangeUsersname;
 import com.xiaoqiangzzz.deal_hebut.ui.dashboard.DashboardFragment;
 import com.xiaoqiangzzz.deal_hebut.ui.goods.GoodsActivity;
 import com.xiaoqiangzzz.deal_hebut.ui.home.GoodsListAdapter;
@@ -86,7 +91,7 @@ public class GoodsListActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         //放在UI线程弹Toast
-                                        Toast.makeText(GoodsListActivity.this, "编辑功能暂未上线", Toast.LENGTH_LONG).show();
+                                        dialog(position);
                                     }
                                 });
 
@@ -95,12 +100,46 @@ public class GoodsListActivity extends AppCompatActivity {
                     }
                 }, currentUser.getId());
             }
+
         });
 
 
     }
 
+    protected void dialog(int position){
+        AlertDialog.Builder builder=new AlertDialog.Builder(GoodsListActivity.this);
+        builder.setMessage("确认下架商品?");
+        builder.setPositiveButton("确认", new DialogInterface.OnClickListener(){
 
+            @Override
+            public void onClick(DialogInterface dialog, int arg1) {
+                // TODO Auto-generated method stub
+Long id = goodsListData.get(position).getId();
+                goodsService.delete(new BaseHttpService.CallBack() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onSuccess(BaseHttpService.HttpTask.CustomerResponse result) {
+                        goodsListData.remove(position);
+                        Toast.makeText(GoodsListActivity.this, "下架成功", Toast.LENGTH_LONG).show();
+                        ((GoodsListAdapter) goodsListAdapter).updateData(goodsListData);
+
+                    }
+                }, id);
+
+                dialog.dismiss();
+            }
+
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener(){
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+
+        });
+        builder.create().show();
+    }
 
     private ArrayList<String> getData() {
         ArrayList<String> data = new ArrayList<>();

@@ -26,6 +26,10 @@ public class GoodsService {
         httpService.post(LOCAL_URL + "goods/add", goods, callBack, Goods.class);
     }
 
+    public void delete(BaseHttpService.CallBack callBack, Long goodsId){
+        httpService.delete(LOCAL_URL + "goods/delete", goodsId.toString(), callBack, Long.class);
+    }
+
     public void getAll(BaseHttpService.CallBack callBack) {
         httpService.get(LOCAL_URL + "goods/getAll", callBack, Goods[].class);
     }

@@ -37,7 +37,12 @@ public class GoodsServiceImpl implements GoodsService {
 
   }
 
-  @Override
+    @Override
+    public void delete(Long id) {
+        this.goodsRepository.deleteById(id);
+    }
+
+    @Override
   public List<Goods> getAll() {
     return this.goodsRepository.findAllByOrderByIdDesc();
   }
