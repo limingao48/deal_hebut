@@ -3,6 +3,7 @@
     <string name="title_home">商品</string>
     <string name="title_dashboard">我的消息</string>
     <string name="title_notifications">个人信息</string>
+    <string name="title_my">我发布的</string>
     <string name="title_activity_change_username">changeUsername</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

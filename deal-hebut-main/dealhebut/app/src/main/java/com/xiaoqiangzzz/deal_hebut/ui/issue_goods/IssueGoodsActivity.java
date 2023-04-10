@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -49,6 +50,10 @@ public class IssueGoodsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.issue_goods);
+        Button button1 = (Button) findViewById(R.id.goods_to_chat);
+        Drawable drawable1 = getResources().getDrawable(R.drawable.wang);
+        drawable1.setBounds(10, 5, 80, 80);//第一0是距左边距离，第二0是距上边距离
+        button1.setCompoundDrawables(drawable1, null, null, null);//只放左边
         this.issueGoodsImageView = findViewById(R.id.issue_goods_image);
 
         // 设置物品浏览瀑布列表
