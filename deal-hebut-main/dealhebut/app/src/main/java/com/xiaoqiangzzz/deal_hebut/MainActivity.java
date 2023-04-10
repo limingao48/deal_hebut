@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         //Then call setStatusBarColor.
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        window.setStatusBarColor(getResources().getColor(R.color.loginColor));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
