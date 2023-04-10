@@ -17,6 +17,7 @@ public interface UserService {
    * @return boolean
    */
   boolean checkPasswordIsRight(String password);
+  User updateUsername(User user);
 
   User getById(Long id);
 
