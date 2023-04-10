@@ -1,4 +1,5 @@
 package com.xiaoqiangzzz.deal_hebut.service;
+import com.xiaoqiangzzz.deal_hebut.entity.OnPassword;
 import com.xiaoqiangzzz.deal_hebut.entity.User;
 
 import io.reactivex.rxjava3.subjects.BehaviorSubject;
@@ -52,5 +53,9 @@ public class UserService {
 
     public void updateUsername(BaseHttpService.CallBack callBack, User user) {
         httpService.post(LOCAL_URL + "user/updateUsername", user, callBack, User.class);
+    }
+
+    public void updatePassword(BaseHttpService.CallBack callBack, OnPassword user) {
+        httpService.post(LOCAL_URL + "user/updatePassword", user, callBack, User.class);
     }
 }

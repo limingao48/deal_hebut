@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import com.xiaoqiangzzz.deal_hebut.ui.auth.LoginActivity;
+import com.xiaoqiangzzz.deal_hebut.ui.auth.PasswordActivity;
 import com.xiaoqiangzzz.deal_hebut.ui.changeUsername.ChangeUsersname;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.MediaType;
@@ -79,6 +80,20 @@ public class NotificationsFragment extends Fragment {
                 intent.putExtras(bundle);
                 //启动
                 startActivity(intent);
+            }
+        });
+
+        //修改密码
+        view.findViewById(R.id.change_password).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 添加点击响应事件
+                Intent intent = new Intent(getActivity(), PasswordActivity.class);
+                Bundle bundle = new Bundle();
+                intent.putExtras(bundle);
+                //启动
+                startActivity(intent);
+
             }
         });
 

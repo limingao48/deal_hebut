@@ -65,7 +65,7 @@ public class UserController {
    * @param user user
    * @throws ValidationException 验证异常.
    */
-  @PutMapping("updatePassword")
+  @PostMapping("updatePassword")
   public void updatePassword(@RequestBody PasswordUser user) throws ValidationException {
     this.userService.updatePassword(user.getPassword(), user.getNewPassword());
   }
