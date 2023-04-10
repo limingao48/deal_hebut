@@ -49,4 +49,8 @@ public class UserService {
     public void uploadImage(RequestBody data, BaseHttpService.CallBack callBack) {
         httpService.putByForm(LOCAL_URL + "user/changeImage", data, callBack, String.class);
     }
+
+    public void updateUsername(BaseHttpService.CallBack callBack, User user) {
+        httpService.post(LOCAL_URL + "user/updateUsername", user, callBack, User.class);
+    }
 }

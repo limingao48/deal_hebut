@@ -36,7 +36,14 @@ public class UserServiceImpl implements UserService {
     return currentLoginUser.getPassword().equals(password);
   }
 
-  @Override
+    @Override
+    public User updateUsername(User user) {
+    User current = getCurrentUser();
+    current.setPetName(user.getPetName());
+    return userRepository.save(current);
+    }
+
+    @Override
   public void updatePassword(String password, String newPassword) throws ValidationException {
     if (!this.checkPasswordIsRight(password)) {
       throw new ValidationException("旧密码不正确");

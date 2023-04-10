@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import com.xiaoqiangzzz.deal_hebut.ui.auth.LoginActivity;
+import com.xiaoqiangzzz.deal_hebut.ui.changeUsername.ChangeUsersname;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -127,6 +128,18 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
+        view.findViewById(R.id.change_username).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 给bnt1添加点击响应事件
+                Intent intent = new Intent(getActivity(), ChangeUsersname.class);
+                Bundle bundle = new Bundle();
+                intent.putExtras(bundle);
+                //启动
+                startActivity(intent);
+
+            }
+        });
         view.findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

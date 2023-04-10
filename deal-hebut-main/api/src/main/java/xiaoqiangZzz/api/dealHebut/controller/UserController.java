@@ -42,6 +42,13 @@ public class UserController {
     return this.userService.checkPasswordIsRight(user.getPassword());
   }
 
+  @PostMapping("updateUsername")
+  @JsonView(GetCurrentLoginUserJsonView.class)
+  public User updateUsername(@RequestBody User user) {
+    User user1 = user;
+    return userService.updateUsername(user);
+  }
+
   @GetMapping("test")
   public String test() {
     return "success";
